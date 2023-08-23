@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Appointments</title>
+</head>
+<body>
+    <h1>Available Appointments</h1>
+    <ul>
+        {% for appointment in appointments %}
+            <li>{{ appointment.appointment_date }} - {{ appointment.patient_name }} (<a href="{% url 'appointments:book' %}">Book</a>)</li>
+        {% empty %}
+            <li>No available appointments.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
